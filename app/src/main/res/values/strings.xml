@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name" translatable="false">ESheBee</string>
+    <string name="product_name" translatable="false">পণ্যের নাম নির্বাচন করুন:</string>
+    <string name="product_catagory" translatable="false">পণ্যের ধরণ নির্বাচন করুন:</string>
+    <string name="product_spacification" translatable="false">পণ্যের উপ নির্বাচন করুন  :</string>
+    <string name="select_button" translatable="false">বাছাই করুন</string>
+    <string name="hint_product_name" translatable="false">পণ্যের নাম</string>
+    <string name="hint_product_catagory" translatable="false">পণ্যের ধরন</string>
+    <string name="hint_product_sub_catagory" translatable="false">পণ্যের বিবরণ</string>
+    <string name="about_product_confirmation" translatable="false">save করুন </string>
+    <string name="nextpage" translatable="false">পরবর্তী পৃষ্ঠায় যান </string>
+    <string name="product_add_button" translatable="false">add </string>
+    <string name="add_your_part" translatable="false">পণ্যের অংশ যুক্ত করুন </string>
+    <string name="product_add_cancel_button" translatable="false">cancel </string>
+    <string name="product_select__button" translatable="false">select </string>
+    <string name="user_product_save__button" translatable="false">save </string>
+    <string name="user_product_cancel__button" translatable="false">cancel </string>
+    <string name="pproduct_part" translatable="false">পণ্যের অংশ নির্বাচন করুন: </string>
+    <string name="layer" translatable="false">layer নির্বাচন করুন: </string>
+    <string name="body" translatable="false">body </string>
+    <string name="handle" translatable="false">handle </string>
+    <string name="zipper" translatable="false">zipper </string>
+    <string name="gazet" translatable="false">gazet </string>
+    <string name="submit" translatable="false">সংরক্ষণ </string>
+    <string name="measurement" translatable="false">Measurement </string>
+    <string name="height" translatable="false">Height </string>
+    <string name="partselection" translatable="false">এখানে আপনার পণ্যের অংশ লিখুন</string>
+    <string name="weight" translatable="false">Weight </string>
+    <string name="gripper" translatable="false">Gripper </string>
+    <string name="consumption" translatable="false">Consumption </string>
+    <string name="materials" translatable="false">Materials </string>
+    <string name="layer1" translatable="false">Layer-1 </string>
+    <string name="layer2" translatable="false">Layer-2 </string>
+    <string name="layer3" translatable="false">Layer-3 </string>
+    <string name="measurementUnit" translatable="false">একক নির্বাচন করুন : </string>
+    <string name="facbric_settings" translatable="false">কাপড় সেটিংস </string>
+    <string name="matrial_name" translatable="false">উপকরণের নাম</string>
+    <string name="save" translatable="false">সংরক্ষণ</string>
+    <string name="updtae" translatable="false">update</string>
+    <string name="code" translatable="false">কোড নম্বর</string>
+    <string name="material_type" translatable="false">উপকরণের ধরন</string>
+    <string name="count" translatable="false">সুতার কাউন্ট</string>
+    <string name="lamination" translatable="false">লেমিনেশন</string>
+    <string name="bohor" translatable="false">বঽর</string>
+    <string name="proti_goj" translatable="false">প্রতি গজের মুল্য</string>
+    <string name="wastage" translatable="false">অপচয়</string>
+    <string name="flactuation" translatable="false">দরের ওঠানামা</string>
+    <string name="dying" translatable="false">ডাইং</string>
+    <string name="brand" translatable="false">ব্রান্ড</string>
+    <string name="color" translatable="false">color</string>
+    <string name="YES" translatable="false">হ্যাঁ</string>
+    <string name="NO" translatable="false">না</string>
+
+</resources>

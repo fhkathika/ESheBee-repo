@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/measurement"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Part"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:gravity="center"
+           />
+        <EditText
+            android:id="@+id/updatePart"
+            android:layout_width="150dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:id="@+id/updatebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="update"/>
+
+    </LinearLayout>
+  
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+          <RadioGroup
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="2"
+              android:orientation="horizontal">
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="20sp"
+                  android:text="@string/measurementUnit"/>
+              <RadioButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="inchi"/>
+
+              <RadioButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:text="cm"/>
+          </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/height"/>
+            <TextView
+                android:id="@+id/H_decrement"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text=" -"
+                android:textSize="45sp" />
+
+   <TextView
+       android:id="@+id/h_edittxt"
+       android:layout_width="40dp"
+       android:layout_height="40dp"
+       android:text="0"
+       android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/H_increment"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textSize="45sp" />
+
+        </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="@string/weight"/>
+    <TextView
+        android:id="@+id/W_decrement"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:textSize="45sp"
+        android:text=" -"/>
+
+
+            <TextView
+                android:id="@+id/w_edittxt"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:text="0"
+                android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/W_increment"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:textSize="45sp"
+        android:text="+"/>
+
+
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Gripper"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/g_decrement"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text=" -"
+                android:textSize="45sp" />
+            <TextView
+                android:id="@+id/g_edittxt"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="0%"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/g_increment"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="45sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/consumption"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/consumption"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="  "
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:weightSum="4">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/materials"
+       android:layout_weight="2"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/addspinnerlist"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_add_box_black_24dp"
+        />
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_marginLeft="20sp"
+                        android:text="@string/layer"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/layer_decrement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="45sp"
+                        android:text="  - "/>
+                    <EditText
+                        android:id="@+id/layeredittext"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/layer_increment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:textSize="40sp"
+                        android:text=" + "/>
+                </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:gravity="center"
+    android:orientation="horizontal">
+                <ListView
+                    android:id="@+id/layerlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+            </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:layout_weight="3"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:orientation="vertical">-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:orientation="vertical">-->
+<!--<LinearLayout-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal">-->
+<!--        <Spinner-->
+
+<!--            android:id="@+id/spinnerl1"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textAlignment="center">-->
+
+<!--        </Spinner>-->
+
+<!--</LinearLayout>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textAlignment="center"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:text="@string/layer1"/>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/m_list1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1.25"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:hint="enter text"-->
+<!--                android:textAlignment="center" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/addbtn1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight=".75"-->
+<!--                android:src="@drawable/ic_add_black_24dp" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:orientation="vertical">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+<!--        <Spinner-->
+
+<!--            android:id="@+id/spinnerl2"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textAlignment="center">-->
+
+<!--        </Spinner>-->
+
+<!--        </LinearLayout>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textAlignment="center"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:text="@string/layer2"/>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:orientation="horizontal">-->
+<!--            <EditText-->
+<!--                android:id="@+id/m_list2"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_weight="1.25"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:hint="enter text"-->
+<!--                />-->
+<!--            <ImageView-->
+<!--                android:id="@+id/addbtn2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight=".75"-->
+<!--                android:src="@drawable/ic_add_black_24dp"/>-->
+<!--        </LinearLayout>-->
+
+
+
+
+
+<!--    </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:orientation="vertical">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+<!--                <Spinner-->
+
+<!--                    android:id="@+id/spinnerl3"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textAlignment="center">-->
+
+<!--                </Spinner>-->
+
+<!--            </LinearLayout>-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:text="@string/layer3"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="2"-->
+<!--                android:orientation="horizontal">-->
+<!--                <EditText-->
+<!--                    android:id="@+id/m_list3"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_weight="1.25"-->
+<!--                    android:hint="enter text"-->
+
+<!--                    />-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/addbtn3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight=".75"-->
+<!--                    android:src="@drawable/ic_add_black_24dp"/>-->
+<!--            </LinearLayout>-->
+
+
+
+
+<!--        </LinearLayout>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="3"-->
+<!--            android:orientation="horizontal">-->
+<!--            <TextView-->
+<!--                android:id="@+id/l1textview"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:hint="Layer1"-->
+<!--                android:textAlignment="center">-->
+
+<!--            </TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/l2textview"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:hint="layer2"-->
+<!--                android:textAlignment="center">-->
+
+<!--            </TextView>-->
+<!--            <TextView-->
+<!--                android:id="@+id/l3textview"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+
+<!--                android:hint="layer3"-->
+<!--                android:textAlignment="center">-->
+
+<!--            </TextView>-->
+
+<!--        </LinearLayout>-->
+
+    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/dataSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Save"></Button>
+
+
+            </LinearLayout>
+
+</LinearLayout>

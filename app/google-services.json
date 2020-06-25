@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "962635567300",
+    "firebase_url": "https://eshebee-81cc2.firebaseio.com",
+    "project_id": "eshebee-81cc2",
+    "storage_bucket": "eshebee-81cc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962635567300:android:e9d8c280b057ba8163f991",
+        "android_client_info": {
+          "package_name": "com.example.eshebee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962635567300-v1bi8f2f5eds9iqdr0ftd47gpn6vcjk7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eshebee",
+            "certificate_hash": "6a218b8e855a109d060fe80cf47a092df5046630"
+          }
+        },
+        {
+          "client_id": "962635567300-v7igb3jlt1hc48lsr2aeh4pqc4fv6jom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFfOBKdYXcn3XD3CJmTsNibzyjf5zduqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962635567300-v7igb3jlt1hc48lsr2aeh4pqc4fv6jom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
