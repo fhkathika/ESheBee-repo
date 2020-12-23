@@ -1,20 +1,11 @@
 package com.example.eshebee;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.icu.text.MessagePattern;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,28 +14,24 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.SimpleAdapter;
+import android.widget.ScrollView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.ChildEventListener;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.eshebee.R.layout.spinner_layout;
 import static java.lang.Double.valueOf;
-import static java.lang.Integer.parseInt;
 
 public class Product_part_Activity extends AppCompatActivity  {
     public static String m;
@@ -65,6 +52,7 @@ double count1,count2,count3,gripper,height,weight,result;
   List<Layer> layerList;
   List<String> stringArrayList;
     List<String> materialTypeSpinnerlist; ;
+    List<String> sutacountSpinnerlist; ;
 
 
  private  listview_Adapter listview_adapter;
@@ -488,6 +476,7 @@ for(DataSnapshot ds:dataSnapshot.getChildren())
                         final EditText codenumbr=mView.findViewById(R.id.code);
                         final EditText material_type=mView.findViewById(R.id.material);
                         final EditText Suta=mView.findViewById(R.id.suta);
+                        final ScrollView scrollView=mView.findViewById(R.id.scrollView);
 //                        final TextView codenumberText=mView.findViewById(R.id.t1);
                         final TextView materialText=mView.findViewById(R.id.t2);
                         final TextView sutaText=mView.findViewById(R.id.t3);
@@ -503,11 +492,16 @@ for(DataSnapshot ds:dataSnapshot.getChildren())
                         final RadioGroup radioGroup=mView.findViewById(R.id.radiogroup);
                         final RadioGroup radioGroup2=mView.findViewById(R.id.radiogroup2);
                        final Spinner materialTypeSpinner=mView.findViewById(R.id.spinner_listMAt);
-//                       final Spinner sutaCountSpinner=mView.findViewById(R.id.spinner_listSuta);
+                       final Spinner sutaCountSpinner=mView.findViewById(R.id.spinner_listSuta);
                        final TextView texting=mView.findViewById(R.id.matlistTv);
                        final TextView sutacounttexting=mView.findViewById(R.id.sutalistTv);
-                        materialTypeSpiner = FirebaseDatabase.getInstance().getReference(" Material_Type_Spinner");
-                        sutaCountTypeSpiner = FirebaseDatabase.getInstance().getReference(" SutaCount_Type_Spinner");
+                        materialTypeSpiner = FirebaseDatabase.getInstance().getReference("  Material_Type_Spinner");
+                        sutaCountTypeSpiner = FirebaseDatabase.getInstance().getReference("SutaCount_Type_Spinner");
+                        materialTypeSpinnerlist=new ArrayList<>();
+                        sutacountSpinnerlist=new ArrayList<>();
+
+
+
 
                         texting.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -517,6 +511,7 @@ for(DataSnapshot ds:dataSnapshot.getChildren())
                                 View mView = LayoutInflater.from(Product_part_Activity.this).inflate(R.layout.product_sp_add_dialogbox, null);
                                 final AlertDialog alert = partEditor_DialogeBox.create();
                                 alert.setView(mView);
+                                alert.show();
                                 final EditText materialTypeList=mView.findViewById(R.id.userAddProductspecification);
                                 Button save=mView.findViewById(R.id.userProductSpSave);
                                 save.setOnClickListener(new View.OnClickListener() {
@@ -534,32 +529,29 @@ for(DataSnapshot ds:dataSnapshot.getChildren())
 
                                     }
                                 });
-                                alert.show();
-                            }
-                        });
-
-                        materialTypeSpinnerlist=new ArrayList<>();
-                        final ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(mcontext,
-                                android.R.layout.simple_spinner_dropdown_item, materialTypeSpinnerlist);
-
-                        materialTypeSpinner.setAdapter(spinnerAdapter);
-
-                        materialTypeSpiner.addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                materialTypeSpinnerlist.clear();
-                                for(DataSnapshot item:dataSnapshot.getChildren()) {
-                                    final String material_type=item.getValue(String.class);
-                                    materialTypeSpinnerlist.add(material_type);
-                                }
-                                spinnerAdapter.notifyDataSetChanged();
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
                             }
                         });
+//                        materialTypeSpiner.addValueEventListener(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                                materialTypeSpinnerlist.clear();
+//                                for(DataSnapshot item:dataSnapshot.getChildren()) {
+//                                    final String material_type_spinner=item.child("material_type_list").getValue(String.class);
+//                                    materialTypeSpinnerlist.add(material_type_spinner);
+//                                }
+//                                final ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(mcontext,
+//                                        android.R.layout.simple_spinner_dropdown_item, materialTypeSpinnerlist);
+//
+//                                materialTypeSpinner.setAdapter(spinnerAdapter);
+//                                spinnerAdapter.notifyDataSetChanged();
+//                            }
+//
+//                            @Override
+//                            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                            }
+//                        });
 
                         sutacounttexting.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -569,16 +561,17 @@ for(DataSnapshot ds:dataSnapshot.getChildren())
                                 View mView = LayoutInflater.from(Product_part_Activity.this).inflate(R.layout.product_sp_add_dialogbox, null);
                                 final AlertDialog alert = partEditor_DialogeBox.create();
                                 alert.setView(mView);
+                                alert.show();
                                 final EditText materialTypeList=mView.findViewById(R.id.userAddProductspecification);
                                 Button save=mView.findViewById(R.id.userProductSpSave);
                                 save.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
 
-                                        String  material_type_list= materialTypeList.getText().toString();
+                                        String  suta_type_list= materialTypeList.getText().toString();
                                         String key= sutaCountTypeSpiner.push().getKey();
 //                                        materialTypeSpinnerClass material=new materialTypeSpinnerClass(ma);
-                                        sutaCountTypeSpiner.child(key).setValue(material_type_list);
+                                        sutaCountTypeSpiner.child(key).setValue(suta_type_list);
 
                                         Toast.makeText(mcontext, "spinner item added", Toast.LENGTH_SHORT).show();
 
@@ -586,25 +579,45 @@ for(DataSnapshot ds:dataSnapshot.getChildren())
 
                                     }
                                 });
-                                alert.show();
+
                             }
                         });
 
-                        materialTypeSpinnerlist=new ArrayList<>();
-                        final ArrayAdapter<String> spinnerAdaptersuta = new ArrayAdapter<String>(mcontext,
-                                android.R.layout.simple_spinner_dropdown_item, materialTypeSpinnerlist);
 
-                        materialTypeSpinner.setAdapter(spinnerAdapter);
-
-                        materialTypeSpiner.addValueEventListener(new ValueEventListener() {
+//
+//                        materialTypeSpiner.addValueEventListener(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                                materialTypeSpinnerlist.clear();
+//                                for(DataSnapshot item:dataSnapshot.getChildren()) {
+//                                    final String material_type=item.getValue(String.class);
+//                                    sutacountSpinnerlist.add(material_type);
+//                                }
+//
+//                                final ArrayAdapter<String> spinnerAdaptermTYpe = new ArrayAdapter<String>(mcontext,
+//                                        android.R.layout.simple_spinner_dropdown_item, materialTypeSpinnerlist);
+//
+//                                materialTypeSpinner.setAdapter(spinnerAdaptermTYpe);
+//                                spinnerAdaptermTYpe.notifyDataSetChanged();
+//                            }
+//
+//                            @Override
+//                            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                            }
+//                        });
+                        sutaCountTypeSpiner.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                materialTypeSpinnerlist.clear();
+                                sutacountSpinnerlist.clear();
                                 for(DataSnapshot item:dataSnapshot.getChildren()) {
                                     final String material_type=item.getValue(String.class);
-                                    materialTypeSpinnerlist.add(material_type);
+                                    sutacountSpinnerlist.add(material_type);
                                 }
-                                spinnerAdapter.notifyDataSetChanged();
+                                final ArrayAdapter<String> spinnerAdepterSutacount=new ArrayAdapter(mcontext,R.layout.support_simple_spinner_dropdown_item,sutacountSpinnerlist);
+
+                                sutaCountSpinner.setAdapter(spinnerAdepterSutacount);
+                                spinnerAdepterSutacount.notifyDataSetChanged();
                             }
 
                             @Override
@@ -612,6 +625,11 @@ for(DataSnapshot ds:dataSnapshot.getChildren())
 
                             }
                         });
+
+
+
+
+
                         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                             @Override
                             public void onCheckedChanged(RadioGroup radioGroup, int i) {

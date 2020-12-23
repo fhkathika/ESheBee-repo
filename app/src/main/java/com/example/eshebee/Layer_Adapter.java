@@ -30,8 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.eshebee.Product_part_Activity.m;
-
 public class Layer_Adapter extends ArrayAdapter<Layer> {
 
     public String Tag = "List_Adapter";
@@ -123,10 +121,10 @@ public class Layer_Adapter extends ArrayAdapter<Layer> {
                         final TextView Flactuation = mView.findViewById(R.id.flactiation);
                         final TextView Waste = mView.findViewById(R.id.waste);
 //                        final TextView codenumberText=mView.findViewById(R.id.t1);
-                        final TextView materialText = mView.findViewById(R.id.t2);
-                        final TextView sutaText = mView.findViewById(R.id.t3);
-                        final TextView radiobtn1textview = mView.findViewById(R.id.t4);
-                        final TextView rtadiobtn2textview = mView.findViewById(R.id.t5);
+                        final TextView materialText = mView.findViewById(R.id.t2_update);
+                        final TextView sutaText = mView.findViewById(R.id.t3_update);
+                        final TextView radiobtn1textview = mView.findViewById(R.id.t4_update);
+                        final TextView rtadiobtn2textview = mView.findViewById(R.id.t5_update);
 //                        Button savematerial=mView.findViewById(R.id.save);
                         Button updatematerial = mView.findViewById(R.id.update_materialData);
                         final RadioGroup radioGroup = mView.findViewById(R.id.radiogroup);
@@ -209,8 +207,8 @@ public class Layer_Adapter extends ArrayAdapter<Layer> {
                                 String col = Color.getText().toString();
                                 String br = Brand.getText().toString();
                                 String w = Waste.getText().toString();
-                                String dying = radiobtn1textview.getText().toString();
-                                String lamination = rtadiobtn2textview.getText().toString();
+//                                String dying = radiobtn1textview.getText().toString();
+//                                String lamination = rtadiobtn2textview.getText().toString();
 
                                 materialText.setText(m);
                                 sutaText.setText(s);
@@ -243,7 +241,7 @@ public class Layer_Adapter extends ArrayAdapter<Layer> {
 //                                    }
 //                                });
 //                                productMaterialdb.child("-M8s75JrlvByDzlCUXXk").child("material_type").setValue("hello world");
-                                productMaterialdb.orderByChild("material_type").equalTo(m).addListenerForSingleValueEvent(new ValueEventListener() {
+                                productMaterialdb.child("material_type").orderByKey().equalTo(m).addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                         Log.i(Tag, "inside ");
